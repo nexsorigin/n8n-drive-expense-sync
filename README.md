@@ -347,46 +347,6 @@ The workflow requires spreadsheet read and write access so it can:
 8. Publish only after insertion and removal verification succeeds.
 9. Add a scheduled trigger only after the manual workflow is stable.
 
-## Privacy and Security
-
-Invoice filenames may contain confidential financial and business information.
-
-Before publishing a workflow export to GitHub:
-
-- Remove OAuth credentials and credential references.
-- Remove spreadsheet IDs.
-- Remove Google Drive folder IDs.
-- Remove webhook URLs and authentication headers.
-- Remove customer, supplier, and business records.
-- Remove pinned node data.
-- Remove execution samples.
-- Remove test filenames containing real invoice information.
-- Review Code nodes for embedded identifiers.
-- Review the Git history for previously committed secrets.
-
-Do not commit:
-
-```text
-client secrets
-access tokens
-refresh tokens
-authorization codes
-API keys
-cookies
-login credentials
-production spreadsheet data
-production invoice filenames
-```
-
-Use placeholders such as:
-
-```text
-<GOOGLE_DRIVE_RECEIPT_FOLDER_ID>
-<GOOGLE_SHEETS_SPREADSHEET_ID>
-<GOOGLE_DRIVE_CREDENTIAL>
-<GOOGLE_SHEETS_CREDENTIAL>
-```
-
 ## Limitations
 
 - The workflow does not perform OCR.
@@ -401,7 +361,3 @@ Use placeholders such as:
 ## Status
 
 The workflow should remain inactive and unpublished until its credentials, resource identifiers, spreadsheet structure, and controlled test cases have been configured and verified.
-
-## License
-
-Add the license appropriate for your repository, such as MIT, Apache-2.0, or a private/proprietary notice.
